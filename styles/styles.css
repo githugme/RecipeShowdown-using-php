@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+}
+body .navbar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 25px;
+  border-bottom: 1px solid #c64756;
+}
+.navbar h1 {
+  color: #c64756;
+  font-family: 'Montserrat', sans-serif;
+
+}
+.navbar .links {
+  margin-left: auto;
+}
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+  cursor: auto;
+}
+
+.navbar a:hover {
+  color: #ff8882;
+}
+
+div.links .create-button{
+  color: #fff;
+  background-color: #c64756;
+  border-radius: 8px;
+  font-size: 22px;
+  padding: 10px;
+
+}
+
+footer div{
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* main headers */
+/* font-family: 'Montserrat', sans-serif; */
+
+/* rest
+ */
+
+
+/* add php */
+
+section form h1{
+  color: #ff8882;
+  font-family: 'Montserrat', sans-serif;
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+section form{
+  max-width: 800px;
+  margin: auto;
+  padding: 15px;
+}
+section h3{
+  color: #ff8882;
+  font-family: 'Montserrat', sans-serif;
+}
+section label{
+  display: block;
+  margin: 10px auto;
+  text-align: left;
+  color: #ff8882;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+section input{
+  display: block;
+  text-align: left;
+  width: 600px;
+  height: 40px;
+  padding: 10px;
+  font-weight: bold;
+  margin-bottom: 30px;
+
+}
+
+section textarea{
+  display: block;
+  text-align: left;
+  width: 600px;
+  height: 80px;
+  padding: 10px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+section form input.submit-button{
+  color: #fff;
+  background-color: #c64756;
+  border-radius: 3px;
+  font-size: 18px;
+  padding: 0px;
+  text-align: center;
+  margin: 10px auto;
+  height: 40px;
+  width: 200px;
+  font-family: 'Montserrat', sans-serif;
+  border: 1px solid #ddd;
+}
