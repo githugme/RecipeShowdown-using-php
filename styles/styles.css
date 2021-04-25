@@ -12,9 +12,12 @@ body .navbar {
   margin-top: 25px;
   border-bottom: 1px solid #c64756;
 }
-.navbar h1 {
+.navbar a h1{
   color: #c64756;
   font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  cursor: pointer;
 
 }
 .navbar .links {
@@ -24,11 +27,16 @@ body .navbar {
   margin-left: 16px;
   text-decoration: none;
   padding: 6px;
-  cursor: auto;
+  cursor: pointer;
 }
 
 .navbar a:hover {
   color: #ff8882;
+}
+
+.home-button{
+  font-size: 20px;
+  font-weight: bold;
 }
 
 div.links .create-button{
@@ -46,37 +54,31 @@ footer div{
   font-family: 'Open Sans', sans-serif;
 }
 
-/* main headers */
-/* font-family: 'Montserrat', sans-serif; */
-
-/* rest
- */
 
 
 /* add php */
 
-section form h1{
-  color: #ff8882;
+
+
+section form{
+  max-width: 600px;
+  margin: auto;
+  padding: 15px;
+}
+
+section h1{
+  color: #ce1f6a;
   font-family: 'Montserrat', sans-serif;
   max-width: 800px;
   margin: 20px auto;
   text-align: left;
 }
 
-section form{
-  max-width: 800px;
-  margin: auto;
-  padding: 15px;
-}
-section h3{
-  color: #ff8882;
-  font-family: 'Montserrat', sans-serif;
-}
 section label{
   display: block;
   margin: 10px auto;
   text-align: left;
-  color: #ff8882;
+  color: #ce1f6a;
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   font-weight: bold;
@@ -103,16 +105,89 @@ section textarea{
   margin-bottom: 30px;
 }
 
-section form input.submit-button{
+section form p{
+  font-size: 18px;
+  color: #ce1f6a;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: -20px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+.submit-button{
   color: #fff;
   background-color: #c64756;
   border-radius: 3px;
   font-size: 18px;
-  padding: 0px;
+  padding: 0;
   text-align: center;
   margin: 10px auto;
   height: 40px;
   width: 200px;
   font-family: 'Montserrat', sans-serif;
   border: 1px solid #ddd;
+}
+
+
+/* home page */
+
+
+div.grid-container {
+  padding: 10px;
+
+  text-align: left;
+}
+
+div.grid-container .card{
+  display: inline-block;
+  background-color: #fcecdd;
+  width: 350px;
+  margin: 40px;
+  padding: 20px;
+  border-radius: 4px;
+  color: #393e46;
+  border-color: #ffd5cd;
+}
+
+div.grid-container, h3{
+  margin: 10px 0;
+}
+
+div.grid-container .card:hover{
+  opacity:8;
+}
+
+div.grid-container a{
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 3px;
+  margin: 20px 0;
+  padding: 5px 0;
+  color: #393e46;
+}
+div.grid-container a:hover{
+  border-bottom: 3px solid #393e46;;
+}
+
+.recipe-title{
+  max-width: 1000px;
+  margin: 20px auto;
+  text-align: left;
+  color: #c64756;
+}
+
+
+div.details{
+  background-color: #fcecdd;
+  line-height: 2rem;
+  max-width: 800px;
+  text-align: left;
+  margin: 30px auto;
+  padding: 50px;
+}
+
+footer{
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
 }

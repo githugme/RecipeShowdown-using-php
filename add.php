@@ -1,33 +1,72 @@
 <?php
 
+    include('config/connect.php');
+    $name = $dish = $ingredients = $protocol = "";
+    $errors = ["name" => "", "dish" => "", "ingredients" => "", "protocol" => ""];
+
     if(isset($_POST['submit'])){
 
-    // checking if the data is provided or throw an output message
+    // checking if the data is provided correctly or throw an output message
 
-    if(empty($_POST['name'])){
-      echo "Pls type your name and submit";
-    } else {
-      echo htmlspecialchars($_POST['name']);
-    }
+      if(empty($_POST['name'])){
+        $errors["name"] = "Pls type your name and submit";
+      } else {
+        $name = $_POST['name'];
+        if (!preg_match('/^[a-zA-Z\s]+$/', $name)){
+          $errors["name"] = "Must only contain letters and spaces";
+        }
+      }
 
-    if(empty($_POST['dish'])){
-      echo "Pls type your dish name and submit";
-    } else {
-      echo htmlspecialchars($_POST['dish']);
-    }
+      if(empty($_POST['dish'])){
+        $errors["dish"] = "Pls type your dish name and submit";
+      } else {
+        $dish = $_POST['dish'];
+        if (!preg_match('/^[a-zA-Z\s]+$/', $dish)){
+        $errors["dish"] = "Must only contain letters and spaces";
+      }
+      }
 
-    if(empty($_POST['ingredients'])){
-      echo "Pls type the ingredients and submit";
-    } else {
-      echo htmlspecialchars($_POST['ingredients']);
-    }
+      if(empty($_POST['ingredients'])){
+        $errors["ingredients"] = "Pls type the ingredients and submit";
+      } else {
+        $ingredients = $_POST['ingredients'];
+        if (!preg_match('/^([a-zA-Z\s]+)(,\s*[a-zA-Z\s]*)*$/', $ingredients)){
+        $errors["ingredients"] = "use comma to seperate items and must only consist of letters and spaces";
+      }
+      }
 
-    if(empty($_POST['procedure'])){
-      echo "Pls type the procedure and submit";
-    } else {
-      echo htmlspecialchars($_POST['procedure']);
-    }
+      if(empty($_POST['protocol'])){
+        $errors["protocol"] = "Pls type the protocol and submit";
+      } else {
+        $protocol = $_POST['protocol'];
+        if (!preg_match('/^[a-zA-Z\s]+$/', $protocol)){
+        $errors["protocol"] = "Must only contain letters and spaces";
+      }
+      }
 
+
+      if(array_filter($errors)){
+			//echo 'errors in form';
+		} else {
+			// escape sql chars
+			$name = mysqli_real_escape_string($conn, $_POST['name']);
+			$dish = mysqli_real_escape_string($conn, $_POST['dish']);
+			$ingredients = mysqli_real_escape_string($conn, $_POST['ingredients']);
+      $protocol = mysqli_real_escape_string($conn, $_POST['protocol']);
+
+			// create sql
+      $sql = "INSERT INTO recipes(name,dish,ingredients) VALUES('$name','$dish','$ingredients')";
+
+			// save to db and check
+			if(mysqli_query($conn, $sql)){
+				// success
+				header('Location: index.php');
+			} else {
+				echo 'query error: '. mysqli_error($conn);
+			}
+
+
+		}
     };
 ?>
 
@@ -42,17 +81,21 @@
     <form class="" action="add.php" method="POST">
       <h1>Add Recipe</h1>
 
-      <label for="">Your name</label>
-      <input type="text" name="name" value="">
+      <label for="">Your name: </label>
+      <input type="text" name="name" value="<?php echo htmlspecialchars($name) ?>">
+      <p><?php echo $errors["name"]; ?></p>
 
-      <label for="">Dish name</label>
-      <input type="text" name="dish" value="">
+      <label for="">Dish name: </label>
+      <input type="text" name="dish" value="<?php echo htmlspecialchars($dish) ?>">
+      <p><?php echo $errors["dish"]; ?></p>
 
-      <label for="">Ingredients (Comma seperated)</label>
-      <input type="text" name="ingredients" value="">
+      <label for="">Ingredients: </label>
+      <input type="text" name="ingredients" value="<?php echo htmlspecialchars($ingredients) ?>">
+      <p><?php echo $errors["ingredients"]; ?></p>
 
-      <label for="">Procedure</label>
-      <textarea class="procedure" type="textarea" name="procedure" value=""></textarea>
+      <label for="">procedure: </label>
+      <textarea class="protocol" type="textarea" name="protocol" value="<?php echo htmlspecialchars($protocol) ?>"></textarea>
+      <p><?php echo $errors["protocol"]; ?></p>
 
       <input class="submit-button" type="submit" name="submit" value="Add Recipe">
     </form>
