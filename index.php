@@ -1,5 +1,5 @@
 <?php
-
+	echo '<script>alert("Please do not delete data which is not created by you")</script>';
 	// Connecting to the database
 	include('config/connect.php');
 
@@ -38,7 +38,7 @@
 				<div class="card">
 					<h2><?php echo htmlspecialchars($recipe['name']); ?></h2>
 					<h3>Dish: <?php echo htmlspecialchars($recipe['dish']); ?></h3>
-					<a class="" href="details.php?id=<?php echo $recipe['id'] ?>">More info</a>
+					<a class="" href="details.php?id=<?php echo $recipe['id'] ?>">More info >></a>
 				</div>
 
 			<?php endforeach; ?>

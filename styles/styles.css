@@ -161,13 +161,13 @@ div.grid-container .card:hover{
 div.grid-container a{
   text-decoration: none;
   font-weight: bold;
-  border-radius: 3px;
+  /* border-radius: 3px; */
   margin: 20px 0;
   padding: 5px 0;
   color: #393e46;
 }
 div.grid-container a:hover{
-  border-bottom: 3px solid #393e46;;
+  border-bottom: 2px solid #393e46;;
 }
 
 .recipe-title{
@@ -190,4 +190,24 @@ div.details{
 footer{
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
+/* theres a problem its not working so i used inline styling */
+/* .delete_button {
+  color: #fff;
+  background-color: #c64756;
+  border-radius: 3px;
+  font-size: 18px;
+  padding: 0;
+  text-align: center;
+  max-width: 500px;
+  margin: 30px auto;
+  height: 40px;
+  width: 150px;
+  font-family: 'Montserrat', sans-serif;
+  border: 1px solid #ddd;
+} */

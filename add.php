@@ -30,18 +30,18 @@
         $errors["ingredients"] = "Pls type the ingredients and submit";
       } else {
         $ingredients = $_POST['ingredients'];
-        if (!preg_match('/^([a-zA-Z\s]+)(,\s*[a-zA-Z\s]*)*$/', $ingredients)){
-        $errors["ingredients"] = "use comma to seperate items and must only consist of letters and spaces";
-      }
+      //   if (!preg_match('/^([a-zA-Z\s]+)(,\s*[a-zA-Z\s]*)*$/', $ingredients)){
+      //   $errors["ingredients"] = "use comma to seperate items and must only consist of letters and spaces";
+      // }
       }
 
       if(empty($_POST['protocol'])){
         $errors["protocol"] = "Pls type the protocol and submit";
       } else {
         $protocol = $_POST['protocol'];
-        if (!preg_match('/^[a-zA-Z\s]+$/', $protocol)){
-        $errors["protocol"] = "Must only contain letters and spaces";
-      }
+      //   if (!preg_match('/^[a-zA-Z\s]+$/', $protocol)){
+      //   $errors["protocol"] = "Must only contain letters and spaces";
+      // }
       }
 
 
@@ -55,7 +55,7 @@
       $protocol = mysqli_real_escape_string($conn, $_POST['protocol']);
 
 			// create sql
-      $sql = "INSERT INTO recipes(name,dish,ingredients) VALUES('$name','$dish','$ingredients')";
+      $sql = "INSERT INTO recipes(name,dish,ingredients,protocol) VALUES('$name','$dish','$ingredients','$protocol')";
 
 			// save to db and check
 			if(mysqli_query($conn, $sql)){
