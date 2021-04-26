@@ -37,6 +37,7 @@
 
 				<div class="card">
 					<h2><?php echo htmlspecialchars($recipe['name']); ?></h2>
+					<img style="height:180px;" src="images/dish.png" alt="img">
 					<h3>Dish: <?php echo htmlspecialchars($recipe['dish']); ?></h3>
 					<a class="" href="details.php?id=<?php echo $recipe['id'] ?>">More info >></a>
 				</div>
